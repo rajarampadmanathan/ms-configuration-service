@@ -1,0 +1,17 @@
+server:
+  port: 8889
+spring:
+  application:
+    name: configuration-service
+  profiles:
+    active: native
+  cloud:
+    config:
+      enabled: true
+      server:
+        encrypt:
+          enabled: true
+        git:
+          uri: https://github.com/rajarampadmanathan/configuration-files
+        native:
+          search-locations: classpath:/config_repository

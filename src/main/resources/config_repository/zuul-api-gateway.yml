@@ -1,0 +1,20 @@
+configurtion:
+  projectName: zuul-api-gatweway
+zuul:
+  prefix: /api
+  routes:
+    catalog: 
+      path: /catalog/**
+      serviceId: catalog-client
+eureka: 
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8861/eureka/
+    registerWithEureka: false
+ribbon: 
+  Timeout: 10000
+server:
+  port: 8865
+management:
+  security:
+    enabled: false

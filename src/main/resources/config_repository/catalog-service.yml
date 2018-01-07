@@ -1,0 +1,34 @@
+configurtion:
+  projectName: catalog-service
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8861/eureka}
+  instance:
+    instance-id: ${spring.application.name}:${random.value}
+    preferIpAddress: true
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+  datasource:
+    url: jdbc:mysql://catalog.cycjksgftk5l.us-west-2.rds.amazonaws.com/catalog
+    username: test_catalog
+    password: catalog123
+  profiles:
+    active:
+    - test
+  application:
+    name: catalog-service
+server:
+  port: 0
+---
+spring:
+  profiles: test
+server:
+  port: 0
+---
+spring:
+  profiles: test1
+server:
+  port: 8088

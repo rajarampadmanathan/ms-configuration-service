@@ -1,0 +1,12 @@
+configurtion:
+  projectName: eureka-service-registry
+server:
+  port: 8861
+spring:
+  application:
+    name: eureka-service-registry
+test:
+  message: Hello Rajaram
+eureka:
+  client:
+    register-with-eureka: false

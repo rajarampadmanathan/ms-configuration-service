@@ -1,0 +1,12 @@
+configurtion:
+  projectName: catalog-client
+server:
+  port: 8090
+spring:
+  application:
+    name: catalog-client
+eureka:
+  client:
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8861/eureka}
