@@ -8,13 +8,16 @@ eureka:
     instance-id: ${spring.application.name}:${random.value}
     preferIpAddress: true
 spring:
+  sleuth: 
+    sampler:
+      percentage: 0.5
   jpa:
     hibernate:
       ddl-auto: create
   datasource:
-    url: jdbc:mysql://catalog.cycjksgftk5l.us-west-2.rds.amazonaws.com/catalog
-    username: test_catalog
-    password: catalog123
+    url: jdbc:mysql://localhost:3306/catalog
+    username: root
+    password: Raja@123
   profiles:
     active:
     - test

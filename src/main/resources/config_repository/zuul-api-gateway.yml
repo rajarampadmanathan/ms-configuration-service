@@ -1,18 +1,26 @@
 configurtion:
   projectName: zuul-api-gatweway
+spring:
+  sleuth: 
+    sampler:
+      percentage: 0.5
 zuul:
   prefix: /api
   routes:
     catalog: 
       path: /catalog/**
       serviceId: catalog-client
+    catalog-service: 
+      path: /catalog-service/**
+      serviceId: catalog-service
+      
 eureka: 
   client:
     serviceUrl:
       defaultZone: http://localhost:8861/eureka/
-    registerWithEureka: false
+    registerWithEureka: true
 ribbon: 
-  Timeout: 10000
+  ReadTimeout: 60000
 server:
   port: 8865
 management:

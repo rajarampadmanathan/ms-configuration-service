@@ -1,0 +1,7 @@
+configurtion:
+  projectName: zipkin-server
+server:
+  port: 9411
+management:
+  security:
+    enabled: false
